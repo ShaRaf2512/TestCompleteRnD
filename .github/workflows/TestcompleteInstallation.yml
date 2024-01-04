@@ -1,4 +1,4 @@
-name: TestExecute Simple Test
+name: TestExecute Installation test
 run-name: TestExecute run from GitHub Action (${{ github.actor }})
 on:
   push:
@@ -10,14 +10,14 @@ jobs:
     runs-on: windows-latest
     permissions: write-all
     steps:
-      # uses: actions/checkout@v3
+      
       - name: Job Startup
         run: |
           echo "Starting job [Event=${{ github.event_name }}]"
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Download TestExecute
         run: |
-            curl -o TestCompleteInstaller.exe https://download.smartbear.com/TestComplete/15/TestComplete_15.40.exe
+            curl -o .\TestCompleteInstaller.exe https://downloads.smartbear.com/TestExecute1552SLM.exe
             # Run the installer with appropriate arguments (adjust as needed)
-            TestCompleteInstaller.exe -SilentInstall
+            .\TestCompleteInstaller.exe -SilentInstall
             echo "TestComplete is installed"
