@@ -17,7 +17,11 @@ jobs:
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Download TestExecute
         run: |
-            curl -o .\TestCompleteInstaller.exe https://downloads.smartbear.com/TestExecute1552SLM.exe
-            # Run the installer with appropriate arguments (adjust as needed)
-            .\TestCompleteInstaller.exe -SilentInstall
-            echo "TestComplete is installed"
+            curl -o D:\a\TestCompleteRnD\TestCompleteRnD\TestCompleteInstaller.exe https://downloads.smartbear.com/TestExecute1552SLM.exe
+      - name: Show working folder content
+        run: dir
+        shell: cmd
+      - name: Install TestExecute
+        run: D:\a\TestCompleteRnD\TestCompleteRnD\TestCompleteInstaller.exe -SilentInstall
+             echo "TestComplete is installed"
+        shell: cmd
