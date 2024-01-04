@@ -24,4 +24,4 @@ jobs:
       - name: Install TestExecute
         run: D:\a\TestCompleteRnD\TestCompleteRnD\TestCompleteInstaller.exe -SilentInstall /accessKey:"f09c4a43-c7ce-4d28-ba11-6e99403d2c81"
              echo "TestComplete is installed"
-        shell: cmd
+        
