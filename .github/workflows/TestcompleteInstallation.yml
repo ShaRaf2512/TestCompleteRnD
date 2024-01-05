@@ -22,11 +22,11 @@ jobs:
         run: dir
         shell: cmd
       - name: Install TestExecute
-        run: ./TestCompleteInstaller.exe -SilentInstall /accessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" -Debug
+        run: ./TestCompleteInstaller.exe -SilentInstall /accessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" -verbose
              echo "TestComplete is installed"
-             pwd
-             cd ./
-             ls
-             echo "Hence TestComplete Istalled successfully"
+        shell: pwd
+               cd ./
+               ls
+               echo "Hence TestComplete Istalled successfully"
 
         
