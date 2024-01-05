@@ -17,11 +17,15 @@ jobs:
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Download TestExecute
         run: |
-            curl -o D:\a\TestCompleteRnD\TestCompleteRnD\TestCompleteInstaller.exe  https://downloads.smartbear.com/TestComplete1559SLM.exe
+            curl ${{ vars.TEST_EXECUTE_DOWNLOAD_URL }} -o ./TestCompleteInstaller.exe  
       - name: Show working folder content
         run: dir
         shell: cmd
       - name: Install TestExecute
-        run: D:\a\TestCompleteRnD\TestCompleteRnD\TestCompleteInstaller.exe -SilentInstall /accessKey:"f09c4a43-c7ce-4d28-ba11-6e99403d2c81"
+        run: ./TestCompleteInstaller.exe -SilentInstall /accessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" -Debug
              echo "TestComplete is installed"
+             pwd
+             cd ./
+             ls
+
         
