@@ -22,7 +22,7 @@ jobs:
         run: dir
         shell: cmd
       - name: Install TestExecute
-        run: .\TestCompleteInstaller.exe > output.txt -SilentInstall /accessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" -log
+        run: .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 /log 
              echo "TestComplete is installed"
       - name : list the drirectory content
         run: |
