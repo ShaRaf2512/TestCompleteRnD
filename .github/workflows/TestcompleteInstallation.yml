@@ -22,16 +22,14 @@ jobs:
         run: dir
         shell: cmd
       - name: Install TestExecute
-        run: .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 /log 
+        run: .\TestCompleteInstaller.exe -SilentInstall
              echo "TestComplete is installed"
       - name : list the drirectory content
         run: |
           ls
-          pwd
-          cd ./
           echo "Hence TestComplete Istalled successfully"
       - name: Find TestComplete Installed files
-        run : ls 'C:\Program Files (x86)\SmartBear\TestExecute 15\Bin'
+        run : ls 'C:\Program Files (x86)\SmartBear\TestExecute 15\'
       - name: Env Variable for TestExecute bin folder
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
