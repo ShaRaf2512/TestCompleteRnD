@@ -30,7 +30,7 @@ jobs:
           ls
           echo "Hence TestComplete Installed successfully"
       - name: Find TestComplete Installed files
-        run : ls 'C:\Program Files (x86)'
+        run : ls 'C:\Program Files (x86)\SmartBear\'
       - name: Env Variable for TestExecute bin folder
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
