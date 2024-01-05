@@ -41,7 +41,7 @@ GOTO ExecuteTest
 REM Launches TestExecute
 REM executes the specified project
 REM and closes TestExecute when the run is over
-"C:\Program Files (x86)\SmartBear\TestExecute 15\Bin\TestExecute.exe" %ProjectPath% /r /e /AccessKey:%AccessKey% /SilentMode /Timeout:1200 /ns /ErrorLog:%cd%\logs\error.log /ExportLog:%cd%\logs\runlog.html /ExportSummary:%cd%\logs\runlog.xml /shr:%cd%\logs\shared-repo-link.txt /shrn:LogFromGitHubAction /shrei:7
+"C:\Program Files (x86)\SmartBear\TestExecute 15\Bin\TestExecute.exe" %ProjectPath% /r /e /AccessKey:%AccessKey% /SilentMode /Timeout:120 /ns /ErrorLog:%cd%\logs\error.log /ExportLog:%cd%\logs\runlog.html /ExportSummary:%cd%\logs\runlog.xml /shr:%cd%\logs\shared-repo-link.txt /shrn:LogFromGitHubAction /shrei:7
 
 set Error_Level=%ERRORLEVEL%
 ECHO TestExecute execution finished with code: %Error_Level% | tee -a "%cd%\summary.md"
