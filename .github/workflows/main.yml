@@ -17,19 +17,19 @@ jobs:
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Download TestExecute
         run: |
-          Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -OutFile "./TE.exe"
+          Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -OutFile ".\TE.exe"
           echo "TestExecute downloaded - ${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}"
       - name: Show working folder content
         run: dir
         shell: cmd
       - name: Install TestExecute
-        run: ./TE.exe -SilentInstall
+        run: .\TE.exe -SilentInstall
         shell: cmd
       - name: Env Variable for TestExecute bin folder
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
       - name: Launch TestExecute
-        run: ./test-runner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'Web' }}
+        run: test-runner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'Web' }}
         shell: cmd
       - name: JUnit Report from TestExecute
         uses: dorny/test-reporter@v1.6.0
