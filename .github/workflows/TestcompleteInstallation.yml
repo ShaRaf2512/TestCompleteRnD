@@ -31,7 +31,7 @@ jobs:
           cd ./
           echo "Hence TestComplete Istalled successfully"
       - name: Find TestComplete Installed files
-        run : ls C:\my install files
+        run : ls 'C:\my install files'
       - name: Env Variable for TestExecute bin folder
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
