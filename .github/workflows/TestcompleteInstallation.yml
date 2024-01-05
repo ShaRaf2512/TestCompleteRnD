@@ -27,5 +27,6 @@ jobs:
              pwd
              cd ./
              ls
+             echo "Hence TestComplete Istalled successfully"
 
         
