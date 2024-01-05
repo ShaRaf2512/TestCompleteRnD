@@ -22,7 +22,7 @@ jobs:
         run: dir
         shell: cmd
       - name: Install TestExecute
-        run: .\TestCompleteInstaller.exe -SilentInstall 
+        run: .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}"
              echo "TestComplete is installed"
         shell : cmd
       - name : list the directory content
@@ -30,7 +30,7 @@ jobs:
           ls
           echo "Hence TestComplete Installed successfully"
       - name: Find TestComplete Installed files
-        run : ls 
+        run : ls 'C:\Program Files (x86)\SmartBear\TestExecute 15\Bin'
       - name: Env Variable for TestExecute bin folder
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
