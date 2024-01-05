@@ -22,7 +22,7 @@ jobs:
         run: dir
         shell: cmd
       - name: Install TestExecute
-        run: .\TestCompleteInstaller.exe -SilentInstall /accessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" 
+        run: .\TestCompleteInstaller.exe > output.txt -SilentInstall /accessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" -log="C:\my install files"
              echo "TestComplete is installed"
       - name : list the drirectory content
         run: |
@@ -32,5 +32,6 @@ jobs:
           echo "Hence TestComplete Istalled successfully"
       - name: Env Variable for TestExecute bin folder
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
+        shell: cmd
 
         
