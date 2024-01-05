@@ -17,7 +17,7 @@ jobs:
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Download TestExecute
         run: |
-          	Invoke-WebRequest -Uri ${{ vars.TEST_EXECUTE_DOWNLOAD_URL }} -o ./TestCompleteInstaller.exe  
+          Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
       - name: Show working folder content
         run: dir
         shell: cmd
