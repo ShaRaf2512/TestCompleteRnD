@@ -24,9 +24,11 @@ jobs:
       - name: Install TestExecute
         run: ./TestCompleteInstaller.exe -SilentInstall /accessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" -verbose
              echo "TestComplete is installed"
-        shell: pwd
-               cd ./
-               ls
-               echo "Hence TestComplete Istalled successfully"
+      - name : list the drirectory content
+        run: |
+          ls
+          pwd
+          cd ./
+          echo "Hence TestComplete Istalled successfully"
 
         
