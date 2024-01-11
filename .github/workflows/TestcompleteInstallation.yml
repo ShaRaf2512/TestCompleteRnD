@@ -36,7 +36,7 @@ jobs:
         shell: cmd
       - name : Execute Test
         run : |
-          'C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe' /run '.\AngularAutomation\AngularAutomation.pjs' /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:".\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :report.xml
+          "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" /run ".\AngularAutomation\AngularAutomation.pjs" /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :report.xml
         shell : cmd
          
 
