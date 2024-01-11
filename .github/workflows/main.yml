@@ -29,7 +29,7 @@ jobs:
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
       - name: Launch TestExecute
-        run: test-runner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'Web' }}
+        run: .\test-runner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'Web' }}
         shell: cmd
       - name: JUnit Report from TestExecute
         uses: dorny/test-reporter@v1.6.0

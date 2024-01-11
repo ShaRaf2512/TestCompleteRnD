@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="15.0" key="{E43FF8A2-C0EA-46B0-BA6C-65344AA6CF4D}">
+	<children>
+		<child name="AngularAutomation" key="{5A689F9C-7DA3-41C1-91F4-6302B4A0E13F}" path="AngularAutomation\AngularAutomation.mds" />
+	</children>
+	<testItems key="{1C800986-4CC9-486B-A511-9457279FFD69}">
+		<children>
+			<testItem key="{5A689F9C-7DA3-41C1-91F4-6302B4A0E13F}" enabled="True" timeout="0" stopOnError="True" description="" />
+		</children>
+	</testItems>
+	<variables key="{EB662231-7338-4A7E-A088-9DC777419E70}" />
+	<analysis key="{9864DEE7-5A7B-4BD8-865A-7CFED4624088}" />
+	<scc key="{00000000-0000-0000-0000-000000000000}" name="">
+		<data />
+	</scc>
+</Root>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{9576DAFD-0ADD-41A8-9897-C72F150AF6BB}" version="15.0">
+	<children>
+		<child name="DepositAmount" key="{5EA0F822-E51F-4730-BE2F-278BE40A9EDF}" path="DepositAmount.tcKDTest" />
+	</children>
+</Root>
