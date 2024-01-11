@@ -35,7 +35,7 @@ jobs:
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
       - name : Execute Test
-        run : "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" /run "\AngularAutomation\AngularAutomation.pjs" /AccessKey:"f09c4a43-c7ce-4d28-ba11-6e99403d2c81" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :"report.xml"
+        run : 'C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe' /run '\AngularAutomation\AngularAutomation.pjs' /AccessKey:"f09c4a43-c7ce-4d28-ba11-6e99403d2c81" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :"report.xml"
         shell : cmd
          
 
