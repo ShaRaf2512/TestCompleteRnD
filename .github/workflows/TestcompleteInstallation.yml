@@ -36,13 +36,17 @@ jobs:
       # - name: Env Variable for TestExecute bin folder
       #   run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
       #   shell: cmd
-      - name : Execute Test
+      - name: Print File
         run : |
-           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test: "AngularAutomation/AngularAutomation/KeywordTests/KeywordTests|DepositAmount"  /Timeout:1200 /ns
-        shell : cmd
-      - name: GitHub Action Summary
-        if: always()
-        run: |
-         type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+              type printfile.txt
+        shell: cmd
+      # - name : Execute Test
+      #   run : |
+      #      "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test: "AngularAutomation/AngularAutomation/KeywordTests/KeywordTests|DepositAmount"  /Timeout:1200 /ns
+      #   shell : cmd
+      # - name: GitHub Action Summary
+      #   if: always()
+      #   run: |
+      #    type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
         
