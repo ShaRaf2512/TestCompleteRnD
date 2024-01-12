@@ -38,7 +38,7 @@ jobs:
       #   shell: cmd
       - name: Print File
         run : |
-              cat ../
+              cd ../
               dir
         shell: cmd
       # - name : Execute Test
