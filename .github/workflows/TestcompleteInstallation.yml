@@ -10,7 +10,7 @@ jobs:
     runs-on: 
        - self-hosted
        - Windows
-       
+
     steps:
       
       - name: Job Startup
@@ -29,8 +29,8 @@ jobs:
         shell : cmd
       - name : list the directory content
         run: |
-          ls
-          echo "Hence TestComplete Installed successfully"
+            ls
+            echo "Hence TestComplete Installed successfully"
       - name: Find TestComplete Installed files
         run : ls 'C:\Program Files (x86)\SmartBear\'
       - name: Env Variable for TestExecute bin folder
@@ -38,7 +38,7 @@ jobs:
         shell: cmd
       - name : Execute Test
         run : |
-          "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" /run ".\AngularAutomation\AngularAutomation.pjs" /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :"\log\report.xml" /Timeout:1200 /ns
+           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" /run ".\AngularAutomation\AngularAutomation.pjs" /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :"\log\report.xml" /Timeout:1200 /ns
         shell : cmd
       - name: GitHub Action Summary
         if: always()
