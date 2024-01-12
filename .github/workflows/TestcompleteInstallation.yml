@@ -38,7 +38,7 @@ jobs:
       #   shell: cmd
       - name: Print File
         run : |
-              type "printfile.txt"
+              type "/printfile.txt"
         shell: cmd
       # - name : Execute Test
       #   run : |
