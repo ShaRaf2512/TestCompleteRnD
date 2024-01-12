@@ -12,7 +12,8 @@ jobs:
        - Windows
 
     steps:
-      
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Job Startup
         run: |
           echo "Starting job [Event=${{ github.event_name }}]"
@@ -38,8 +39,7 @@ jobs:
       #   shell: cmd
       - name: Print File
         run : |
-              cd ../
-              dir
+               type printfile.txt
         shell: cmd
       # - name : Execute Test
       #   run : |
