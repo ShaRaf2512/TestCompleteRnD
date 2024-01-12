@@ -38,7 +38,7 @@ jobs:
         shell: cmd
       - name : Execute Test
         run : |
-           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" /run ".\AngularAutomation\AngularAutomation.pjs" /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :"\log\report.xml" /Timeout:1200 /ns
+           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" "\AngularAutomation\AngularAutomation.pjs" /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"\AngularAutomation\AngularAutomation\KeywordTests\KeywordTests|DepositAmount"  /Timeout:1200 /ns
         shell : cmd
       - name: GitHub Action Summary
         if: always()
