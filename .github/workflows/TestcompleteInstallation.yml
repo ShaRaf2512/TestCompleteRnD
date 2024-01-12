@@ -7,7 +7,9 @@ jobs:
   DownloadInstallAndRunTE:
     name: Install and Run TestExecute (${{ github.actor }})
     
-    runs-on: windows-latest
+    runs-on: 
+       - self-hosted
+       - Windows
     permissions: write-all
     steps:
       
@@ -36,8 +38,11 @@ jobs:
         shell: cmd
       - name : Execute Test
         run : |
-          "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" /run ".\AngularAutomation\AngularAutomation.pjs" /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :report.xml
+          "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" /run ".\AngularAutomation\AngularAutomation.pjs" /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"\AngularAutomation\AngularAutomation\KeywordTestsKeywordTests|DepositAmount" /ExportSummary :"\log\report.xml" /Timeout:1200 /ns
         shell : cmd
-         
+      - name: GitHub Action Summary
+        if: always()
+        run: |
+         type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
         
