@@ -38,8 +38,8 @@ jobs:
       #   shell: cmd
       - name: Print File
         run : |
-              echo "Current working directory: $(pwd)"
-              ls -R
+              cat ../
+              dir
         shell: cmd
       # - name : Execute Test
       #   run : |
