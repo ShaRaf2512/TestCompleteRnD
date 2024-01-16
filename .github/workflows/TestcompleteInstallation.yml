@@ -39,7 +39,7 @@ jobs:
       #   shell: cmd
       - name : Execute Test
         run : |
-           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test: "KeywordTests|DepositAmount"  /Timeout:1200 /ns /ExportSummary: \logs\runlog.xml
+           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test: "KeywordTests|DepositAmount"  /Timeout:1200 /ns /ExportSummary: logs/runlog.xml
         shell : cmd
       - name: JUnit Report from TestExecute
         uses: dorny/test-reporter@v1.6.0
