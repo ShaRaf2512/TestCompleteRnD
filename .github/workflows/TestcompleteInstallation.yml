@@ -18,28 +18,29 @@ jobs:
         run: |
           echo "Starting job [Event=${{ github.event_name }}]"
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - name: Download TestExecute
-        run: |
-          Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
-      - name: Show working folder content
-        run: dir
-        shell: cmd
-      - name: Install TestExecute
-        run: .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}"
-             echo "TestComplete is installed"
-        shell : cmd
-      - name : list the directory content
-        run: |
-            ls
-            echo "Hence TestComplete Installed successfully"
-      - name: Find TestComplete Installed files
-        run : ls 'C:\Program Files (x86)\SmartBear\'
-      - name: Env Variable for TestExecute bin folder
-        run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
-        shell: cmd
+      # - name: Download TestExecute
+      #   run: |
+      #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
+      # - name: Show working folder content
+      #   run: dir
+      #   shell: cmd
+      # - name: Install TestExecute
+      #   run: .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}"
+      #        echo "TestComplete is installed"
+      #   shell : cmd
+      # - name : list the directory content
+      #   run: |
+      #       ls
+      #       echo "Hence TestComplete Installed successfully"
+      # - name: Find TestComplete Installed files
+      #   run : ls 'C:\Program Files (x86)\SmartBear\'
+      # - name: Env Variable for TestExecute bin folder
+      #   run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
+      #   shell: cmd
       - name : Execute Test
         run : |
-           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /p:AngularAutomation /test:"KeywordTests|DepositAmount"  /Timeout:1200 /ns 
+           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /p:AngularAutomation /test:"KeywordTests|DepositAmount"  /Timeout:1200 /ns /ExportSummary:AngularAutomation/logs/runlog.xml
+
         shell : cmd
       - name: JUnit Report from TestExecute
         uses: actions/checkout@v2
@@ -51,6 +52,6 @@ jobs:
       - name: GitHub Action Summary
         if: always()
         run: |
-         type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+         type summary.md -Append
 
         
