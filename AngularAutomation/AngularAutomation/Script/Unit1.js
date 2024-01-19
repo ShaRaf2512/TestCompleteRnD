@@ -1,5 +1,7 @@
 ﻿function DepositAmount()
 {
+  //Headless browser execution
+
   var server = "localhost";
   var capabilities = {
     "browserName": "chrome",
