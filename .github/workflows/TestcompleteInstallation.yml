@@ -52,6 +52,6 @@ jobs:
       - name: GitHub Action Summary
         if: always()
         run: |
-         type summary.md -Append
+         type summary.md 
 
         
