@@ -5,7 +5,7 @@
   var server = "localhost";
   var capabilities = {
     "browserName": "chrome",
-    "screenResolution": "1920x1080"
+   // "screenResolution": "1920x1080"
   };
 
   var url = "https://www.way2automation.com/angularjs-protractor/banking/#/login";
