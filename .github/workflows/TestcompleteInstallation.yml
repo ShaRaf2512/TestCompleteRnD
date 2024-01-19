@@ -41,11 +41,11 @@ jobs:
         run : |
            "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /p:AngularAutomation /test:"KeywordTests|DepositAmount"  /Timeout:1200 /ns /ExportSummary:AngularAutomation/logs/runlog.xml
         shell : cmd 
-      - name: Upload Test artifact
+      - name: Upload Test Summary
         uses: actions/upload-artifact@v3
         if: success() || failure() 
         with:
-          name: TestResultSummary
+          name: TestSummary
           path: AngularAutomation/logs/runlog.xml
 
         
