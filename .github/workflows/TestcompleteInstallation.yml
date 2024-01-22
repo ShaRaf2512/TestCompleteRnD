@@ -38,8 +38,12 @@ jobs:
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
       - name : Execute Test
-        run : '"C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200'
-        #shell : cmd
+      # #  run : |
+      #      "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 
+      #   shell : cmd
+        run : |
+            "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\SessionCreator.exe" RunTest /UserName:"user" /Password:"Enhops_123" /ProjectPath:AngularAutomation/AngularAutomation.pjs /project:AngularAutomation /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 /ExportSummary:logs/runlog.xml
+        shell: cmd
       # - name: Upload Test Summary
       #   uses: actions/upload-artifact@v3
       #   if: success() || failure() 
