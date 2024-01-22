@@ -47,5 +47,5 @@ jobs:
         if: success() || failure() 
         with:
           name: TestSummary
-          path: runlog.xml
+          path: report.xml
         
