@@ -9,7 +9,7 @@ jobs:
     
     runs-on: 
        - self-hosted
-       - Windows
+       - Windows2
 
     steps:
       - name: Checkout repository
@@ -18,34 +18,33 @@ jobs:
         run: |
           echo "Starting job [Event=${{ github.event_name }}]"
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      # - name: Download TestExecute
-      #   run: |
-      #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
-      # - name: Show working folder content
-      #   run: dir
-      #   shell: cmd
-      # - name: Install TestExecute
-      #   run: .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}"
-      #        echo "TestComplete is installed"
-      #   shell : cmd
-      # - name : list the directory content
-      #   run: |
-      #       ls
-      #       echo "Hence TestComplete Installed successfully"
-      # - name: Find TestComplete Installed files
-      #   run : ls 'C:\Program Files (x86)\SmartBear\'
-      # - name: Env Variable for TestExecute bin folder
-      #   run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
-      #   shell: cmd
+      - name: Download TestExecute
+        run: |
+          Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
+      - name: Show working folder content
+        run: dir
+        shell: cmd
+      - name: Install TestExecute
+        run: .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}"
+             echo "TestComplete is installed"
+        shell : cmd
+      - name : list the directory content
+        run: |
+            ls
+            echo "Hence TestComplete Installed successfully"
+      - name: Find TestComplete Installed files
+        run : ls 'C:\Program Files (x86)\SmartBear\'
+      - name: Env Variable for TestExecute bin folder
+        run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
+        shell: cmd
       - name : Execute Test
         run : |
-           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /p:AngularAutomation /test:"KeywordTests|DepositAmount" /Timeout:240 /ns /e
-        shell : cmd 
-      # - name: Upload Test Summary
-      #   uses: actions/upload-artifact@v3
-      #  if: success() || failure() 
-      #   with:
-      #     name: TestSummary
-      #     path: "Log/runlog.xml"
-
+           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /p:AngularAutomation /test:"KeywordTests|DepositAmount" /ExportSummary :"report.xml" /Timeout:240 /ns /e 
+        shell : cmd
+      - name: Upload Test Summary
+        uses: actions/upload-artifact@v3
+        if: success() || failure() 
+        with:
+          name: TestSummary
+          path: runlog.xml
         
