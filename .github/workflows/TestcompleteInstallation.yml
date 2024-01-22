@@ -37,13 +37,13 @@ jobs:
       - name: Env Variable for TestExecute bin folder
         run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
-      - name : Set ProjectPath
-        run : set ProjectPath="%cd%\AngularAutomation\AngularAutomation.pjs"
-        shell : cmd
+      # - name : Set ProjectPath
+      #   run : set ProjectPath="%cd%\AngularAutomation\AngularAutomation.pjs"
+      #   shell : cmd
       - name : Execute Test
         run : |
-            "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" %ProjectPath% /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 
-        #shell : cmd
+            "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" "%cd%\AngularAutomation\AngularAutomation.pjs" /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 
+        shell : cmd
         # run : |
         #     "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\SessionCreator.exe" RunTest /UserName:"user" /Password:"Enhops_123" /ProjectPath:AngularAutomation/AngularAutomation.pjs /project:AngularAutomation /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 /ExportSummary:logs/runlog.xml
         # shell: cmd
