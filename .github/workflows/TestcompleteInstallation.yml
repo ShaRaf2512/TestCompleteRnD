@@ -26,8 +26,7 @@ jobs:
         shell: cmd
       - name: Install TestExecute
         run: |
-             .\TestCompleteInstaller.exe > output.txt /SilentInstall /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}"
-             echo "TestComplete is installed"
+             .\TestCompleteInstaller.exe > output.txt /SilentInstall     
         shell : cmd
       - name : list the directory content
         run: |
