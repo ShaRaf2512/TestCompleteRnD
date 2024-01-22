@@ -39,12 +39,12 @@ jobs:
       #   shell: cmd
       - name : Execute Test
         run : |
-           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"KeywordTests|DepositAmount" /ExportSummary:"testreport.xml" /Timeout:1200 /ns /e 
+           "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" AngularAutomation/AngularAutomation.pjs /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /test:"KeywordTests|DepositAmount" /Timeout:1200 /ns /e 
         shell : cmd
-      - name: Upload Test Summary
-        uses: actions/upload-artifact@v3
-        if: success() || failure() 
-        with:
-          name: TestSummary
-          path: testreport.xml
+      # - name: Upload Test Summary
+      #   uses: actions/upload-artifact@v3
+      #   if: success() || failure() 
+      #   with:
+      #     name: TestSummary
+      #     path: testreport.xml
         
