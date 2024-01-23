@@ -2,7 +2,7 @@ name: TestExecute Installation test
 run-name: TestExecute run from GitHub Action (${{ github.actor }})
 on:
   push:
-    branches : ["FeatureTestcompleteInstall"]
+    branches : ["CompleteInstallationandReport"]
   pull_request :
       branches : ["main"]
 jobs:
@@ -20,16 +20,16 @@ jobs:
         run: |
           echo "Starting job [Event=${{ github.event_name }}]"
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      # - name: Download TestExecute
-      #   run: |
-      #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
+      - name: Download TestExecute
+        run: |
+          Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
       - name: Show working folder content
         run: dir
         shell: cmd
-      # - name: Install TestExecute
-      #   run: |
-      #        .\TestCompleteInstaller.exe > output.txt /SilentInstall     
-      #   shell : cmd
+      - name: Install TestExecute
+        run: |
+             .\TestCompleteInstaller.exe > output.txt /SilentInstall     
+        shell : cmd
       - name : list the directory content
         run: |
             ls
