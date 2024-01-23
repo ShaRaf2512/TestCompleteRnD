@@ -34,33 +34,14 @@ jobs:
             echo "Hence TestComplete Installed successfully"
       - name: Find TestComplete Installed files
         run : ls 'C:\Program Files (x86)\SmartBear\'
-      # - name: Env Variable for TestExecute bin folder
-      #   run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
-      #   shell: cmd
+      - name: Env Variable for TestExecute bin folder
+        run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
+        shell: cmd
       - name : Execute Test
-        # run : |
-        #     "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\TestComplete.exe" "%cd%\AngularAutomation\AngularAutomation.pjs" /r /e /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 
-        # shell : cmd
-        # run : |
-        #     "C:\Program Files (x86)\SmartBear\TestComplete 15\Bin\SessionCreator.exe" RunTest /UserName:"user" /Password:"Enhops_123" /ProjectPath:AngularAutomation/AngularAutomation.pjs /project:AngularAutomation /AccessKey:"${{ secrets.TEST_EXECUTE_ACCESS_KEY }}" /Timeout:1200 /ExportSummary:logs/runlog.xml
-        # shell: cmd
         run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
         shell: cmd
-      # - name: JUnit Report from TestExecute
-      #   uses: dorny/test-reporter@v1.6.0
-      #   if: always()
-      #   with:
-      #    name: TestComplete JUnit Report
-      #    path: logs/runlog.xml
-      #    reporter: java-junit
       - name: GitHub Action Summary
         if: always()
         run: |
          type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-      # - name: Upload Test Summary
-      #   uses: actions/upload-artifact@v3
-      #   if: success() || failure() 
-      #   with:
-      #     name: TestSummary
-      #     path: testreport.xml
-        
+      
