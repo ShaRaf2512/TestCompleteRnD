@@ -16,7 +16,7 @@ IF "%2" == "AngularAutomation" GOTO WebProjectRun
 GOTO EchoProjectPath
 
 :WebProjectRun
-set ProjectPath="%cd%\AngularAutomation\AngularAutomation\AngularAutomation.pjs"
+set ProjectPath="%cd%\AngularAutomation\AngularAutomation\AngularAutomation.mds"
 GOTO EchoProjectPath
 
 :ParamProjectPath
