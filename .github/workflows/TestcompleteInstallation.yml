@@ -21,17 +21,17 @@ jobs:
       # - name: Download TestExecute
       #   run: |
       #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
-      # - name: Show working folder content
-      #   run: dir
-      #   shell: cmd
+      - name: Show working folder content
+        run: dir
+        shell: cmd
       # - name: Install TestExecute
       #   run: |
       #        .\TestCompleteInstaller.exe > output.txt /SilentInstall     
       #   shell : cmd
-      # - name : list the directory content
-      #   run: |
-      #       ls
-      #       echo "Hence TestComplete Installed successfully"
+      - name : list the directory content
+        run: |
+            ls
+            echo "Hence TestComplete Installed successfully"
       - name: Find TestComplete Installed files
         run : ls 'C:\Program Files (x86)\SmartBear\'
       - name: Env Variable for TestExecute bin folder
