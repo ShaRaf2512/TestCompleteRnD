@@ -20,26 +20,13 @@ jobs:
         run: |
           echo "Starting job [Event=${{ github.event_name }}]"
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - name: Check if TestExecute is installed
-        id: check_testexecute_installed
-        run: |
-          if (PATH_TE "${{ vars.TEST_EXECUTE_BIN }}") {
-            echo "TestExecute is already installed."
-            echo "##[set-output name=installed]true"
-          } else {
-            echo "TestExecute is not installed."
-            echo "##[set-output name=installed]false"
-          }
-        shell: cmd
       - name: Download TestExecute
-        if: ${{ steps.check_testexecute_installed.outputs.installed == 'false' }}
         run: |
           Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
       - name: Show working folder content
         run: dir
         shell: cmd
       - name: Install TestExecute
-        if: ${{ steps.check_testexecute_installed.outputs.installed == 'false' }}
         run: |
              .\TestCompleteInstaller.exe > output.txt /SilentInstall     
         shell : cmd
