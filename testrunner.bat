@@ -10,7 +10,7 @@ IF %1.==. GOTO AccessKeyMissing
 set AccessKey=%1
 
 REM By default we run web testing
-set ProjectPath="%cd%\AngularAutomation\AngularAutomation\AngularAutomation.pjs"
+set ProjectPath="%cd%\AngularAutomation\AngularAutomation\AngularAutomation.mds"
 
 IF "%2" == "AngularAutomation" GOTO WebProjectRun
 GOTO EchoProjectPath
