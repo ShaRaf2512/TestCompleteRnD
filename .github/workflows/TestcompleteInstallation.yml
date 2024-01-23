@@ -2,7 +2,7 @@ name: TestExecute Installation test
 run-name: TestExecute run from GitHub Action (${{ github.actor }})
 on:
   push:
-  
+    branches : ["FeatureTestcompleteInstall"]
 jobs:
   DownloadInstallAndRunTE:
     name: Install and Run TestExecute (${{ github.actor }})
