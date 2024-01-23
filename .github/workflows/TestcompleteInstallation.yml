@@ -23,14 +23,14 @@ jobs:
       - name: Check if TestExecute is installed
         id: check_testexecute_installed
         run: |
-          if (PATH_TE ${{ vars.TEST_EXECUTE_BIN }}) {
+          if (PATH_TE "${{ vars.TEST_EXECUTE_BIN }}") {
             echo "TestExecute is already installed."
             echo "##[set-output name=installed]true"
           } else {
             echo "TestExecute is not installed."
             echo "##[set-output name=installed]false"
           }
-        #shell: cmd
+        shell: powershell
       - name: Download TestExecute
         if: ${{ steps.check_testexecute_installed.outputs.installed == 'false' }}
         run: |
