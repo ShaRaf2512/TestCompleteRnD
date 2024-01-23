@@ -30,7 +30,7 @@ jobs:
             echo "TestExecute is not installed."
             echo "##[set-output name=installed]false"
           }
-        shell: cmd
+        #shell: cmd
       - name: Download TestExecute
         if: ${{ steps.check_testexecute_installed.outputs.installed == 'false' }}
         run: |
