@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root Signature="{5DCBAC3B-D39C-497C-9BE8-744CBADD37AA}" NameMappingVersion="7" SaveImages="0">
+	<Storages Current="0">
+		<Child Name="Default Configuration" />
+	</Storages>
+	<Nodes Name="NameMapping" Key="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
+		<Children>
+			<Child Name="Sys" Key="{ABB2C67D-4E75-4E4F-92D2-6EAD909BC7D6}">
+				<Properties>
+					<Property Name="Name">
+						<Value Value="Sys" />
+					</Property>
+				</Properties>
+				<Children>
+					<Child Name="explorer" Key="{CBDEADC9-FBCF-465E-AD5F-D4090E70A412}">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value Value="explorer" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndShell_TrayWnd" Key="{5470B62F-ADF9-496A-BA50-6756B3BE5EB2}">
+								<Image FileName="1374581595" Left="0" Top="0" Right="1366" Bottom="40" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="Shell_TrayWnd" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="ReBarWindow32" Key="{B4DD6656-73B2-465F-96C1-48D0EE04771C}">
+										<Image FileName="1374581595" Left="382" Top="0" Right="1025" Bottom="40" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value Value="ReBarWindow32" />
+											</Property>
+										</Properties>
+										<Children>
+											<Child Name="MSTaskSwWClass" Key="{8328661E-D86D-4185-9518-796BD7E0EC2E}">
+												<Image FileName="1374581595" Left="384" Top="0" Right="1025" Bottom="40" />
+												<Properties>
+													<Property Name="WndClass">
+														<Value Value="MSTaskSwWClass" />
+													</Property>
+													<Property Name="WndCaption">
+														<Value Value="Running applications" />
+													</Property>
+												</Properties>
+												<Children>
+													<Child Name="MSTaskListWClass" Key="{FA03F3C6-7527-4EB7-93BF-C4D90FF95A4B}">
+														<Image FileName="1374581595" Left="384" Top="0" Right="1025" Bottom="40" />
+														<TypeInfo Item0="{8B3A2814-51CD-4DC2-BF37-8D3B9B81341A}" />
+														<Properties>
+															<Property Name="WndClass">
+																<Value Value="MSTaskListWClass" />
+															</Property>
+															<Property Name="WndCaption">
+																<Value Value="Running applications" />
+															</Property>
+														</Properties>
+													</Child>
+												</Children>
+											</Child>
+										</Children>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="wndTaskListThumbnailWnd" Key="{33BF56AC-8A75-44AD-8F4F-70270836A56B}">
+								<Image FileName="1156983335" Left="0" Top="0" Right="1366" Bottom="210" />
+								<TypeInfo Item0="{70539C0D-2B51-4F6D-9084-D9645C60DDE0}" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="TaskListThumbnailWnd" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="browser" Key="{09665A15-3980-4C19-8E0F-3BFF1476F46F}">
+						<Properties>
+							<Property Name="ObjectType">
+								<Value Value="Browser" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="BrowserWindow" Key="{BF55D7C4-1320-4C7F-A86E-C7C4A2F34AAB}">
+								<Image FileName="-1392851899" Left="-8" Top="-8" Right="1374" Bottom="736" />
+								<Properties>
+									<Property Name="ObjectType">
+										<Value Value="BrowserWindow" />
+									</Property>
+									<Property Name="ObjectIdentifier">
+										<Value Value="0" Type="0" />
+									</Property>
+								</Properties>
+							</Child>
+							<Child Name="wndChrome_WidgetWin_1" Key="{1A95506D-3943-43FF-BE53-DDEFD242FCA1}">
+								<Image FileName="-1041513927" Left="0" Top="0" Right="624" Bottom="109" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="Chrome_WidgetWin_1" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="userName" Key="{40C9A1DA-43F2-461C-B44A-42EB5F71B3D1}">
+										<Image FileName="-1041513927" Left="0" Top="0" Right="624" Bottom="109" />
+										<TypeInfo Item0="{8B3A2814-51CD-4DC2-BF37-8D3B9B81341A}" />
+										<Properties>
+											<Property Name="WndClass">
+												<Value Value="Chrome_RenderWidgetHostHWND" />
+											</Property>
+											<Property Name="WndCaption">
+												<Value Value="Chrome Legacy Window" />
+											</Property>
+										</Properties>
+									</Child>
+								</Children>
+							</Child>
+							<Child Name="pageWwwWay2automationComAngularj" Key="{06B6AD59-D6B1-4026-B9A0-917805082D2A}">
+								<Image FileName="-1960463584" Left="0" Top="77" Right="1366" Bottom="728" />
+								<TypeInfo Item0="{C8113C48-AE71-4E58-A5BF-B59B4DB583AA}" />
+								<Properties>
+									<Property Name="ObjectType">
+										<Value Value="Page" />
+									</Property>
+									<Property Name="URL">
+										<Value Value="https://www.way2automation.com/angularjs-protractor/banking/*" />
+									</Property>
+								</Properties>
+								<Children>
+									<Child Name="textnodeDepositSuccessful" Key="{354C4FB9-A60B-49A8-8193-CD890C7396E0}">
+										<Image FileName="256018236" Left="394" Top="375" Right="579" Bottom="397" />
+										<TypeInfo Item0="{E0F2991C-98A7-4790-BBAF-E6F106535583}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//span[.=&apos;Deposit Successful&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//span[contains(@class, &apos;error&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//div[4]/div/span" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="textnodeDepositSuccessful2" Key="{4F3BBED4-0B7D-462C-86D6-A04BFC841640}">
+										<Image FileName="-1546759362" Left="394" Top="375" Right="579" Bottom="397" />
+										<TypeInfo Item0="{E0F2991C-98A7-4790-BBAF-E6F106535583}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//span[.=&apos;Deposit Successful&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//span[contains(@class, &apos;error&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//div[4]/div/span" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="buttonCustomerLogin" Key="{09F0D605-B1E2-42B3-9D85-275974DD63E7}">
+										<Image FileName="-855438505" Left="602" Top="222" Right="763" Bottom="268" />
+										<TypeInfo Item0="{0E0A820B-CCBB-45AF-8560-4446124A731D}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//button[.=&apos;Customer Login&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//div[2]/div/div/div/button[contains(@class, &apos;btn&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//div[2]/div/div/div/button" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="formMyform" Key="{AC7BF516-1629-46B8-8B72-589B2EF7E440}">
+										<Image FileName="-360770352" Left="371" Top="222" Right="995" Bottom="281" />
+										<Selectors>
+											<Selector>
+												<Value Value="//form[@name=&apos;myForm&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form[contains(., &apos;Your Name :&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form[@role=&apos;form&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form[contains(@class, &apos;ng-pristine&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="selectUserselect" Key="{E72FDB38-B031-4086-A149-2DC914F37299}">
+										<Image FileName="-360770352" Left="371" Top="247" Right="995" Bottom="281" />
+										<TypeInfo Item0="{64BE52DC-F76D-40FA-88EE-5BCEA7CF20DE}" />
+										<Selectors>
+											<Selector>
+												<Value Value="#userSelect" />
+											</Selector>
+											<Selector>
+												<Value Value="//select[@name=&apos;userSelect&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//select[contains(@class, &apos;form-control&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//select" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="buttonLogin" Key="{36AB5C73-CE4B-423E-ABAD-F2BEA9B3C2ED}">
+										<Image FileName="-1648896349" Left="371" Top="296" Right="431" Bottom="330" />
+										<TypeInfo Item0="{0E0A820B-CCBB-45AF-8560-4446124A731D}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//button[.=&apos;Login&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//button[@type=&apos;submit&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form/button[contains(@class, &apos;btn&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form/button" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="buttonDeposit" Key="{34078FDD-14D9-48F8-BD47-FFBA3C245A23}">
+										<Image FileName="-1941289645" Left="647" Top="318" Right="742" Bottom="364" />
+										<TypeInfo Item0="{0E0A820B-CCBB-45AF-8560-4446124A731D}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//button[contains(text(), &apos;Deposit&apos;)]" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="formMyform2" Key="{FCAC8CAD-6642-4BD4-A5A8-61C57836A8CB}">
+										<Image FileName="1396824752" Left="386" Top="384" Right="980" Bottom="512" />
+										<Selectors>
+											<Selector>
+												<Value Value="//form[@name=&apos;myForm&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form[contains(., &apos;Amount to be Deposited :&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form[@role=&apos;form&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form[contains(@class, &apos;ng-pristine&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="numberinput" Key="{34D1DEDB-31A1-4264-BE80-64E46ADECF6A}">
+										<Image FileName="1396824752" Left="386" Top="409" Right="980" Bottom="443" />
+										<TypeInfo Item0="{930FA693-A7B5-47E1-BF27-81CB26955523}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//input[@type=&apos;number&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//input[contains(@class, &apos;form-control&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//input" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="buttonDeposit2" Key="{9FBBD366-B142-4C97-B579-3ABBF2A8AF3D}">
+										<Image FileName="814041612" Left="386" Top="478" Right="459" Bottom="512" />
+										<TypeInfo Item0="{0E0A820B-CCBB-45AF-8560-4446124A731D}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//button[.=&apos;Deposit&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//button[@type=&apos;submit&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form/button[contains(@class, &apos;btn&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//form/button" />
+											</Selector>
+										</Selectors>
+									</Child>
+									<Child Name="textnodeDepositSuccessful3" Key="{BB1B6B84-E8C2-4003-B904-F44F79002B71}">
+										<Image FileName="1957441423" Left="386" Top="368" Right="571" Bottom="390" />
+										<TypeInfo Item0="{E0F2991C-98A7-4790-BBAF-E6F106535583}" />
+										<Selectors>
+											<Selector>
+												<Value Value="//span[.=&apos;Deposit Successful&apos;]" />
+											</Selector>
+											<Selector>
+												<Value Value="//span[contains(@class, &apos;error&apos;)]" />
+											</Selector>
+											<Selector>
+												<Value Value="//div[4]/div/span" />
+											</Selector>
+										</Selectors>
+									</Child>
+								</Children>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="OneDrive" Key="{80F9CF57-3F7B-4291-AECA-94D2A930D682}">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value Value="OneDrive" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndQt5153QWindowIcon" Key="{28D9351B-D108-4059-9B43-A2B6EE5C2AF1}">
+								<Image FileName="1216127048" Left="0" Top="0" Right="592" Bottom="335" />
+								<TypeInfo Item0="{7F79645D-B88E-4B31-9A7C-ABA76004F4B5}" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="Qt5153QWindowIcon" />
+									</Property>
+									<Property Name="WndCaption">
+										<Value Value="Microsoft OneDrive" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+					<Child Name="notepad_" Key="{D37E3D1A-7A88-412F-B832-E22FA0283B52}">
+						<Properties>
+							<Property Name="ProcessName">
+								<Value Value="notepad++" />
+							</Property>
+						</Properties>
+						<Children>
+							<Child Name="wndNotepad" Key="{D5D507AF-AD38-43BD-A160-49CA1F7BAC2C}">
+								<TypeInfo Item0="{7F79645D-B88E-4B31-9A7C-ABA76004F4B5}" />
+								<Properties>
+									<Property Name="WndClass">
+										<Value Value="Notepad++" />
+									</Property>
+								</Properties>
+							</Child>
+						</Children>
+					</Child>
+				</Children>
+			</Child>
+		</Children>
+	</Nodes>
+	<LogicalNodes Name="Aliases" Owner="{BE401E45-B2D6-4FBA-931A-C2117D5C51AD}">
+		<Child Name="explorer" Owner="{CBDEADC9-FBCF-465E-AD5F-D4090E70A412}">
+			<Child Name="wndShell_TrayWnd" Owner="{5470B62F-ADF9-496A-BA50-6756B3BE5EB2}">
+				<Child Name="ReBarWindow32" Owner="{B4DD6656-73B2-465F-96C1-48D0EE04771C}">
+					<Child Name="MSTaskSwWClass" Owner="{8328661E-D86D-4185-9518-796BD7E0EC2E}">
+						<Child Name="MSTaskListWClass" Owner="{FA03F3C6-7527-4EB7-93BF-C4D90FF95A4B}" />
+					</Child>
+				</Child>
+			</Child>
+			<Child Name="wndTaskListThumbnailWnd" Owner="{33BF56AC-8A75-44AD-8F4F-70270836A56B}" />
+		</Child>
+		<Child Name="browser" Owner="{09665A15-3980-4C19-8E0F-3BFF1476F46F}">
+			<Child Name="BrowserWindow" Owner="{BF55D7C4-1320-4C7F-A86E-C7C4A2F34AAB}" />
+			<Child Name="wndChrome_WidgetWin_1" Owner="{1A95506D-3943-43FF-BE53-DDEFD242FCA1}">
+				<Child Name="userName" Owner="{40C9A1DA-43F2-461C-B44A-42EB5F71B3D1}" />
+			</Child>
+			<Child Name="pageWwwWay2automationComAngularj" Owner="{06B6AD59-D6B1-4026-B9A0-917805082D2A}">
+				<Child Name="depositSuccessfulTxt" Owner="{354C4FB9-A60B-49A8-8193-CD890C7396E0}" />
+				<Child Name="textnodeDepositSuccessful2" Owner="{4F3BBED4-0B7D-462C-86D6-A04BFC841640}" />
+				<Child Name="buttonCustomerLogin" Owner="{09F0D605-B1E2-42B3-9D85-275974DD63E7}" />
+				<Child Name="formMyform" Owner="{AC7BF516-1629-46B8-8B72-589B2EF7E440}">
+					<Child Name="selectUserDropDown" Owner="{E72FDB38-B031-4086-A149-2DC914F37299}" />
+					<Child Name="buttonLogin" Owner="{36AB5C73-CE4B-423E-ABAD-F2BEA9B3C2ED}" />
+				</Child>
+				<Child Name="depositButton" Owner="{34078FDD-14D9-48F8-BD47-FFBA3C245A23}" />
+				<Child Name="formMyform2" Owner="{FCAC8CAD-6642-4BD4-A5A8-61C57836A8CB}">
+					<Child Name="numberinput" Owner="{34D1DEDB-31A1-4264-BE80-64E46ADECF6A}" />
+					<Child Name="buttonDeposit2" Owner="{9FBBD366-B142-4C97-B579-3ABBF2A8AF3D}" />
+				</Child>
+				<Child Name="textnodeDepositSuccessful3" Owner="{BB1B6B84-E8C2-4003-B904-F44F79002B71}" />
+			</Child>
+		</Child>
+		<Child Name="OneDrive" Owner="{80F9CF57-3F7B-4291-AECA-94D2A930D682}">
+			<Child Name="wndQt5153QWindowIcon" Owner="{28D9351B-D108-4059-9B43-A2B6EE5C2AF1}" />
+		</Child>
+		<Child Name="notepad_" Owner="{D37E3D1A-7A88-412F-B832-E22FA0283B52}">
+			<Child Name="wndNotepad" Owner="{D5D507AF-AD38-43BD-A160-49CA1F7BAC2C}" />
+		</Child>
+	</LogicalNodes>
+</Root>

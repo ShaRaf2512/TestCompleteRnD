@@ -1,0 +1,49 @@
+name: TestExecute Installation test
+run-name: TestExecute run from GitHub Action (${{ github.actor }})
+on:
+  push:
+    branches : ["FeatureTestcompleteInstall"]
+  pull_request :
+      branches : ["main"]
+jobs:
+  DownloadInstallAndRunTE:
+    name: Install and Run TestExecute (${{ github.actor }})
+    
+    runs-on: 
+       - self-hosted
+       - lable-2
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Job Startup
+        run: |
+          echo "Starting job [Event=${{ github.event_name }}]"
+          echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      # - name: Download TestExecute
+      #   run: |
+      #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
+      - name: Show working folder content
+        run: dir
+        shell: cmd
+      # - name: Install TestExecute
+      #   run: |
+      #        .\TestCompleteInstaller.exe > output.txt /SilentInstall     
+      #   shell : cmd
+      - name : list the directory content
+        run: |
+            ls
+            echo "Hence TestComplete Installed successfully"
+      - name: Find TestComplete Installed files
+        run : ls 'C:\Program Files (x86)\SmartBear\'
+      - name: Env Variable for TestExecute bin folder
+        run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
+        shell: cmd
+      - name : Execute Test
+        run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
+        shell: cmd
+      - name: GitHub Action Summary
+        if: always()
+        run: |
+         type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+      
