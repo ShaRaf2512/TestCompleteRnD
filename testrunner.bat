@@ -10,13 +10,13 @@ IF %1.==. GOTO AccessKeyMissing
 set AccessKey=%1
 
 REM By default we run web testing
-set ProjectPath="%cd%\AngularAutomation\AngularAutomation\AngularAutomation.mds"
+set ProjectPath="%cd%\AngularAutomation\AngularAutomation.pjs"
 
 IF "%2" == "AngularAutomation" GOTO WebProjectRun
 GOTO EchoProjectPath
 
 :WebProjectRun
-set ProjectPath="%cd%\AngularAutomation\AngularAutomation\AngularAutomation.mds"
+set ProjectPath="%cd%\AngularAutomation\AngularAutomation.pjs"
 GOTO EchoProjectPath
 
 :ParamProjectPath
@@ -34,7 +34,7 @@ GOTO ExecuteTest
 REM Launches TestExecute
 REM executes the specified project
 REM and closes TestExecute when the run is over
-"C:\Program Files (x86)\SmartBear\TestExecute 15\Bin\TestExecute.exe" %ProjectPath% /r /e /AccessKey:%AccessKey% /SilentMode /Timeout:1200 /ns /ErrorLog:%cd%\logs\error.log /ExportLog:%cd%\logs\runlog.html /ExportSummary:%cd%\logs\runlog.xml /shr:%cd%\logs\shared-repo-link.txt /shrn:LogFromGitHubAction /shrei:7
+"C:\Program Files (x86)\SmartBear\TestComplete 15\x64\Bin\TestComplete.exe" %ProjectPath% /r /e /AccessKey:%AccessKey% /SilentMode /Timeout:1200 /ns /ErrorLog:%cd%\logs\error.log /ExportLog:%cd%\logs\runlog.html /ExportSummary:%cd%\logs\runlog.xml /shr:%cd%\logs\shared-repo-link.txt /shrn:LogFromGitHubAction /shrei:7
 
 set Error_Level=%ERRORLEVEL%
 ECHO TestExecute execution finished with code: %Error_Level% >> "%cd%\summary.md" 2>&1
