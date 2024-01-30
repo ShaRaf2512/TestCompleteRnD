@@ -53,7 +53,7 @@ jobs:
         if: success() || failure() 
         with:
          name: TestSummary
-         path: logs\runlog.html 
+         path: "'%GITHUB_WORKSPACE%'logs\runlog.html "
       - name: GitHub Action Summary
         if: always()
         run: type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
