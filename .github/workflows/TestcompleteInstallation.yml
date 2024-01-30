@@ -49,17 +49,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: JUnit Report from TestExecute
-        uses: actions/upload-artifact@v3
+        uses: dorny/test-reporter@v1.6.0
         if: success() || failure() 
         with:
           name: TestComplete JUnit Report
-          path: logs\runlog.html
-          
+          path: logs\runlog.xml    
       - name: GitHub Action Summary
         if: always()
-        run: |  
-         echo "This is html report" >> $GITHUB_STEP_SUMMARY
-         type logs\runlog.html >> $GITHUB_STEP_SUMMARY
-         echo "This is html report" >> $GITHUB_STEP_SUMMARY
-         type logs\runlog.xml >> $GITHUB_STEP_SUMMARY
-        shell: cmd
+        run: type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+         
