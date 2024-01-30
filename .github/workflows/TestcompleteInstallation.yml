@@ -42,6 +42,12 @@ jobs:
       - name : Execute Test
         run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
         shell: cmd
+      - name: JUnit Report from TestExecute
+        uses: actions/upload-artifact@v3
+        if: success() || failure() 
+        with:
+          name: TestComplete JUnit Report
+          path: logs\runlog.xml
       - name: GitHub Action Summary
         if: always()
         run: |
