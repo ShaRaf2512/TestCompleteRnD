@@ -53,7 +53,8 @@ jobs:
         if: success() || failure() 
         with:
           name: TestComplete JUnit Report
-          path: logs\runlog.xml    
+          path: logs\runlog.xml  
+          reporter: java-junit  
       - name: GitHub Action Summary
         if: always()
         run: type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
