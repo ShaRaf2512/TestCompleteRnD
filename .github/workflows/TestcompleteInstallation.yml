@@ -53,8 +53,8 @@ jobs:
         if: success() || failure() 
         with:
           name: TestComplete JUnit Report
-          path: logs\runlog.xml
-          reporter: java-junit
+          path: logs\runlog.html
+          
       - name: GitHub Action Summary
         if: always()
         run: |
@@ -63,4 +63,4 @@ jobs:
          type logs\runlog.html >> $GITHUB_STEP_SUMMARY
          echo "This is html report" >> $GITHUB_STEP_SUMMARY
          type logs\runlog.xml >> $GITHUB_STEP_SUMMARY
-      
+        shell: cmd
