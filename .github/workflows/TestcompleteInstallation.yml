@@ -54,8 +54,13 @@ jobs:
         with:
           name: TestComplete JUnit Report
           path: logs\runlog.xml
+          reporter: java-junit
       - name: GitHub Action Summary
         if: always()
         run: |
          type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+         echo "This is html report" >> $GITHUB_STEP_SUMMARY
+         type logs\runlog.html >> $GITHUB_STEP_SUMMARY
+         echo "This is html report" >> $GITHUB_STEP_SUMMARY
+         type logs\runlog.xml >> $GITHUB_STEP_SUMMARY
       
