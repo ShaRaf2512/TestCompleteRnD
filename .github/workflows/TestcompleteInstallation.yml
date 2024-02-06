@@ -39,22 +39,24 @@ jobs:
       # - name: Env Variable for TestExecute bin folder
       #   run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
       #   shell: cmd
-      - name : Execute Test
-        run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
-        shell: cmd
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - name: Install Dependencies
-        run: npm install
-      - name: JUnit Report from TestExecute
-        uses: actions/upload-artifact@v3
-        if: success() || failure() 
-        with:
-         name: TestSummary
-         path: logs/summary.htm
-      - name: GitHub Action Summary
-        if: always()
-        run: type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-         
+      # - name : Execute Test
+      #   run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
+      #   shell: cmd
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 14
+      # - name: Install Dependencies
+      #   run: npm install
+      # - name: JUnit Report from TestExecute
+      #   uses: actions/upload-artifact@v3
+      #   if: success() || failure() 
+      #   with:
+      #    name: TestSummary
+      #    path: logs/summary.h
+      # - name: GitHub Action Summary
+      #   if: always()
+      #   run: type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+      - name : Zephyr Integration
+        run : .\testZephyr.bat
+        shell : cmd
