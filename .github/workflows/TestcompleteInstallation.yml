@@ -2,7 +2,7 @@ name: TestExecute Installation test
 run-name: TestExecute run from GitHub Action (${{ github.actor }})
 on:
   push:
-    branches : ["CompleteInstallationandReport"]
+    branches : ["Zephyrscaleintegration"]
   pull_request :
       branches : ["main"]
 jobs:
