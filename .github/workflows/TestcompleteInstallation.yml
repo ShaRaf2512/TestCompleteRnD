@@ -10,8 +10,7 @@ jobs:
     name: Install and Run TestExecute (${{ github.actor }})
     
     runs-on: 
-       - self-hosted
-       - lable-2
+       - windows
 
     steps:
       - name: Checkout repository
