@@ -1,24 +1,24 @@
-name: TestExecute Installation test
-run-name: TestExecute run from GitHub Action (${{ github.actor }})
-on:
-  push:
-    branches : ["Zephyrscaleintegration"]
-  pull_request :
-      branches : ["main"]
-jobs:
-  DownloadInstallAndRunTE:
-    name: Install and Run TestExecute (${{ github.actor }})
+# name: TestExecute Installation test
+# run-name: TestExecute run from GitHub Action (${{ github.actor }})
+# on:
+#   push:
+#     branches : ["Zephyrscaleintegration"]
+#   pull_request :
+#       branches : ["main"]
+# jobs:
+#   DownloadInstallAndRunTE:
+#     name: Install and Run TestExecute (${{ github.actor }})
     
-    runs-on: 
-       - windows
+#     runs-on: 
+#        - windows
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Job Startup
-        run: |
-          echo "Starting job [Event=${{ github.event_name }}]"
-          echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+#       - name: Job Startup
+#         run: |
+#           echo "Starting job [Event=${{ github.event_name }}]"
+#           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       # - name: Download TestExecute
       #   run: |
       #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
@@ -41,7 +41,7 @@ jobs:
       # - name : Execute Test
       #   run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
       #   shell: cmd
-      # - name: Set up Node.js
+      #       - name: Set up Node.js
       #   uses: actions/setup-node@v3
       #   with:
       #     node-version: 14
@@ -56,6 +56,6 @@ jobs:
       # - name: GitHub Action Summary
       #   if: always()
       #   run: type summary.md | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
-      - name : Zephyr Integration
-        run : .\testZephyr.bat
-        shell : cmd
+      # - name : Zephyr Integration
+      #   run : .\testZephyr.bat
+      #   shell : cmd
