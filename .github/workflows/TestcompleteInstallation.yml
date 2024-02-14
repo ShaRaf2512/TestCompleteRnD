@@ -1,24 +1,27 @@
-# name: TestExecute Installation test
-# run-name: TestExecute run from GitHub Action (${{ github.actor }})
-# on:
-#   push:
-#     branches : ["Zephyrscaleintegration"]
-#   pull_request :
-#       branches : ["main"]
-# jobs:
-#   DownloadInstallAndRunTE:
-#     name: Install and Run TestExecute (${{ github.actor }})
+name: TestExecute Installation test
+run-name: TestExecute run from GitHub Action (${{ github.actor }})
+on:
+  push:
+    branches : ["Zephyrscaleintegration"]
+  pull_request :
+      branches : ["main"]
+jobs:
+  DownloadInstallAndRunTE:
+    name: Install and Run TestExecute (${{ github.actor }})
     
-#     runs-on: 
-#        - windows
+    runs-on: 
+         - self-hosted
+         - lable-2
 
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v4
-#       - name: Job Startup
-#         run: |
-#           echo "Starting job [Event=${{ github.event_name }}]"
-#           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Job Startup
+        run: |
+          echo "Starting job [Event=${{ github.event_name }}]"
+          echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - name: Print the GitHub Path
+        run : echo "This is the $GITHUB_PATH"
       # - name: Download TestExecute
       #   run: |
       #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
