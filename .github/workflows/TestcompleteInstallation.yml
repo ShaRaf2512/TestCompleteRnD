@@ -21,10 +21,15 @@ jobs:
           echo "Starting job [Event=${{ github.event_name }}]"
           echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Print the GitHub Path
-        run : echo "This is the $GITHUB_PATH"
+        run : echo "This is the ${GITHUB_PATH}"
       - name : PWD
         run : dir
         shell : cmd
+      - name : Assigning the dir path into githubpath
+        run : echo "dir" >> $GITHUB_PATH
+      - name: Print dir in the GitHub Path
+        run : echo "This is the ${GITHUB_PATH}"
+    
       # - name: Download TestExecute
       #   run: |
       #     Invoke-WebRequest -Uri "${{ vars.TEST_EXECUTE_DOWNLOAD_URL }}" -o "./TestCompleteInstaller.exe"  
