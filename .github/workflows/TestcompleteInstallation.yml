@@ -15,6 +15,10 @@ jobs:
          - label-2
 
     steps:
+      - name: Configure Git for long paths
+        run: |
+         git config --global core.longpaths true
+        shell: cmd
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Job Startup
