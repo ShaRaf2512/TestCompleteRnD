@@ -1,6 +1,7 @@
 name: TestExecute Installation test
 run-name: TestExecute run from GitHub Action (${{ github.actor }})
 on:
+  workflow_dispatch :
   push:
     branches : ["TestExecuteRun"]
   pull_request :
