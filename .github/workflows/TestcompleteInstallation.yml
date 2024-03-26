@@ -52,7 +52,8 @@ jobs:
       # - name: Find TestComplete Installed files
       #   run : ls 'C:\Program Files (x86)\SmartBear\'
       - name: Env Variable for TestExecute bin folder
-        run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
+        # run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
+        run : setx PATH "%PATH%;${{ vars.TEST_EXECUTE_BIN }}"
         shell: cmd
       - name : Execute Test
         run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
