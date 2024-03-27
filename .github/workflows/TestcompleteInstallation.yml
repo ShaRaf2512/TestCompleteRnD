@@ -13,6 +13,9 @@ jobs:
     runs-on: 
          - self-hosted
          - label-2
+    env :
+      TEST_EXECUTE_BIN_PATH : ${{ vars.TEST_EXECUTE_BIN }}
+     
 
     steps:
       - name: Configure Git for long paths
@@ -53,7 +56,7 @@ jobs:
       #   run : ls 'C:\Program Files (x86)\SmartBear\'
       - name: Env Variable for TestExecute bin folder
         # run: set PATH_TE="${{ vars.TEST_EXECUTE_BIN }}"
-        run : setx PATH "%PATH%;C:\Program Files (x86)\SmartBear\TestExecute 15\Bin\TestExecute.exe" 
+        run : echo "%PATH%;${{ env.TEST_EXECUTE_BIN_PATH }}" >> $GITHUB_PATH 
         shell: cmd
       - name : Execute Test
         run: .\testrunner.bat ${{ secrets.TEST_EXECUTE_ACCESS_KEY }} ${{ inputs.project || 'AngularAutomation' }}
